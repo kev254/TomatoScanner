@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "470443976017",
+    "project_id": "tomato-68eb0",
+    "storage_bucket": "tomato-68eb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470443976017:android:4ed2f911af168317c8df70",
+        "android_client_info": {
+          "package_name": "org.tensorflow.lite.examples.classification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470443976017-u0cq9j179a65lsh3fstuntdr8nrl09qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClTnzW6MLYKyGoTLLuC__bU-kyfNvcdIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470443976017-u0cq9j179a65lsh3fstuntdr8nrl09qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

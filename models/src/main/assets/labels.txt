@@ -1,0 +1,4 @@
+0 Anthracnose
+1 Blossom end rot
+2 Early Blight
+3 Fusarium wilt

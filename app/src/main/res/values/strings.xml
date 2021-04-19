@@ -1,0 +1,23 @@
+<resources>
+    <string name="tfe_ic_app_name" translation_description="Image Classification demo app [CHAR_LIMIT=40]">Codel</string>
+    <string name="tfe_ic_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="tfe_ic_gpu_quant_error" translation_description="Error regarding GPU support for Quant models[CHAR_LIMIT=60]">GPU does not yet supported quantized models.</string>
+    <string name="tfe_ic_model" translatable="false">Model:</string>
+    <string-array name="tfe_ic_models" translatable="false">
+        <item>Quantized_EfficientNet</item>
+        <item>Float_EfficientNet</item>
+        <item>Quantized_MobileNet</item>
+        <item>Float_MobileNet</item>
+    </string-array>
+
+    <string name="disease_name" >Blosom End Rot</string>
+    <string name="tfe_ic_device" translatable="false">Device:</string>
+    <string name="disases_cause" >The main cause of blossom end rot is improper watering it can be from changes in natural rainfall or irrigation making the soil too wet or to dry.This causes the plant to not be able to absorb enough calcium for good fruit development. However, it’s also possible to have blossom end rot problems from cold soil, high salt levels, root damage, excess nitrogen, or the wrong soil pH.</string>
+    <string name="disases_desc" >When you start seeing black spots starting to form on the end of your tomatoes, your first thought might be that you have a disease problem. But blossom end rot is a physiological problem, not a disease. It’s caused by a calcium imbalance happening inside of your tomato plant but it’s easy to prevent, control, and cure with the right care. You can recognize this problem easily as it starts to form on tomatoes either green or ripe. At first, it looks like a soft, watery spot on the end of the tomato. Eventually, it turns into a brown, scab-like patch with a leathery texture</string>
+    <string name="disase_prev" >It’s very important to water your tomato plants regularly to maintain a consistent level of moisture in the soil over your growing season. When the hot summer weather arrives, water your tomatoes 1 to 2 times a week as needed. Make sure to water them deeply so the soil is moist down to about 6 inches (15.24 cm). Deeper watering encourages the roots to grow deep into the ground where the moisture level is more consistent. Take care not to overwater though. Plants should not be sitting in soggy soil as this can also stress them and stop the proper uptake of calcium </string>
+    <string-array name="tfe_ic_devices" translatable="false">
+        <item>CPU</item>
+        <item>GPU</item>
+        <item>NNAPI</item>
+    </string-array>
+</resources>
