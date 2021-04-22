@@ -34,6 +34,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -85,13 +86,14 @@ public abstract class CameraActivity extends AppCompatActivity
   private ImageView plusImageView, minusImageView;
   private Spinner modelSpinner;
   private Spinner deviceSpinner;
-  private TextView threadsTextView, diseaseName, diseaseDescription;
+  private TextView threadsTextView, diseaseName, diseaseDescription, scanneddisease;
 
   private Model model = Model.FLOAT_EFFICIENTNET;
   private Device device = Device.CPU;
   private int numThreads = -1;
   MediaPlayer blight,blosom,anthracnose, fusarium;
   Button Disesase_details;
+  ProgressBar progressbar;
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
@@ -116,6 +118,9 @@ public abstract class CameraActivity extends AppCompatActivity
     gestureLayout = findViewById(R.id.gesture_layout);
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
     bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
+    progressbar=findViewById(R.id.dpgb);
+    scanneddisease=findViewById(R.id.scannedDisease);
+
 
     ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
     vto.addOnGlobalLayoutListener(
@@ -541,26 +546,34 @@ public abstract class CameraActivity extends AppCompatActivity
               String.format("%.2f", (100 * recognition.getConfidence())) + "%");
           float confi = 100 * recognition.getConfidence();
           try {
-              if (!Anthracnose && recognitionTextView.getText().toString().equalsIgnoreCase("0 Anthracnose") && confi>75 ) {
+              if (!Anthracnose && recognitionTextView.getText().toString().equalsIgnoreCase("0 Anthracnose") && confi>90 ) {
                   anthracnose.start();
                   Anthracnose =true;
+                  progressbar.setVisibility(View.GONE);
+                  scanneddisease.setText("ATNTRACNOSE");
                   Blight = false;
                   Blossom = false;
                   diseaseName.setText(R.string.tfe_ic_app_name);
                   diseaseDescription.setText(R.string.tfe_ic_app_name);
-              } else if (!Blight && recognitionTextView.getText().toString().equalsIgnoreCase("2 Early Blight")&& confi>75) {
+              } else if (!Blight && recognitionTextView.getText().toString().equalsIgnoreCase("2 Early Blight")&& confi>90) {
                   blight.start();
+                  progressbar.setVisibility(View.GONE);
+                  scanneddisease.setText("EARLY BLIGHT");
                   Blight = true;
                   Blossom =false;
                   Anthracnose = false;
-              } else if (!Blossom &&recognitionTextView.getText().toString().equalsIgnoreCase("1 Blossom end rot")&& confi>75 ) {
+              } else if (!Blossom &&recognitionTextView.getText().toString().equalsIgnoreCase("1 Blossom end rot")&& confi>90 ) {
                   blosom.start();
+                  progressbar.setVisibility(View.GONE);
+                 scanneddisease.setText("BLOSOM END ROT");
                   Blossom  =true;
                   Blight =false;
                   Anthracnose = false;
               }
-              else if (!Fusarium &&recognitionTextView.getText().toString().equalsIgnoreCase("3 Fusarium wilt")&& confi>75 ) {
+              else if (!Fusarium &&recognitionTextView.getText().toString().equalsIgnoreCase("3 Fusarium wilt")&& confi>90 ) {
                 fusarium.start();
+                progressbar.setVisibility(View.GONE);
+                scanneddisease.setText("FUSARIUM WILT");
                 Blossom  =true;
                 Blight =false;
                 Anthracnose = false;

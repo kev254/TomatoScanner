@@ -45,13 +45,25 @@
                     android:orientation="vertical">
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/parent"
+                        android:id="@+id/textinputPhone"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            style="@style/modifiedEditText"
+                            android:id="@+id/txtPhone"
+                            android:hint="Phone"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:textSize="17sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/parent"
                         android:id="@+id/textinputName"
                         android:layout_marginTop="@dimen/loginViewsMargin">
                         <EditText
                             style="@style/modifiedEditText"
-                            android:id="@+id/editTextName"
+                            android:id="@+id/txtName"
                             android:hint="Name"
-                            android:inputType="textPersonName"
+                            android:inputType="text"
                             android:maxLines="1"
                             android:textSize="17sp"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -61,7 +73,7 @@
                         android:layout_marginTop="10dp">
                         <EditText
                             style="@style/modifiedEditText"
-                            android:id="@+id/editTextEmail"
+                            android:id="@+id/txtEmail"
                             android:hint="Email"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
@@ -75,7 +87,7 @@
                         android:layout_marginTop="10dp">
                         <EditText
                             style="@style/modifiedEditText"
-                            android:id="@+id/editTextPassword"
+                            android:id="@+id/txtPassword"
                             android:hint="New Password"
                             android:inputType="textPassword"
                             android:maxLines="1"
@@ -89,7 +101,7 @@
                         android:layout_marginTop="10dp">
                         <EditText
                             style="@style/modifiedEditText"
-                            android:id="@+id/editTextConfirmPassword"
+                            android:id="@+id/txtConfirmPassword"
                             android:hint="Confirm Password"
                             android:inputType="textPassword"
                             android:maxLines="1"
@@ -99,7 +111,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         style="@style/loginButton"
-                        android:id="@+id/cirRegisterButton"
+                        android:id="@+id/btnRegister"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         android:background="@drawable/button_background_blue"
@@ -110,9 +122,10 @@
 
                     <TextView
                         style="@style/parent"
-                        android:id="@+id/accountText"
+                        android:id="@+id/txtLoginLink"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         android:gravity="center"
+                        android:layout_marginBottom="15dp"
                         android:text="Already have an account?"
                         android:textAlignment="center"
                         android:textColor="@color/themeColor"

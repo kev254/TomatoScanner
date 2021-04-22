@@ -20,7 +20,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:orientation="vertical"
             android:gravity="center"
             android:padding="0dp">
@@ -30,6 +32,13 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:text="Login" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtError"
+                android:text=""
+                android:textSize="22sp"
+                android:textColor="#F80505"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -39,9 +48,9 @@
                 <EditText
                     android:textSize="17sp"
                     android:backgroundTint="@color/primaryTextColor"
-                    android:id="@+id/editTextEmail"
+                    android:id="@+id/txtEmail"
                     style="@style/modifiedEditText"
-                    android:hint="Key in your Email address"
+                    android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -51,10 +60,10 @@
                 android:layout_marginTop="8dp">
                 <EditText
                     android:textSize="17sp"
-                    android:id="@+id/editTextPassword"
+                    android:id="@+id/txtPassword"
                     style="@style/modifiedEditText"
                     android:backgroundTint="@color/primaryTextColor"
-                    android:hint="Enter Password"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +76,7 @@
                 android:textColor="@color/primaryTextColor"
                 android:textSize="@dimen/newsMoreTextSize" />
             <Button
-                android:id="@+id/btnlogin"
+                android:id="@+id/btnLogin"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 style="@style/loginButton"
@@ -77,7 +86,7 @@
                 android:background="@drawable/button_background_blue"/>
 
             <TextView
-                android:id="@+id/txtsignup"
+                android:id="@+id/txtSignupLink"
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 android:layout_gravity="center_horizontal"
