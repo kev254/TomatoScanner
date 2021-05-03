@@ -23,6 +23,8 @@
         <activity android:name=".ClassifierActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".DashbordActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".PhoneActivity" />
         <activity
             android:name=".LoginActivity"
