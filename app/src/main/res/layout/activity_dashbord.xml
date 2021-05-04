@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         style="@style/AppTheme.AppBarOverlay"
         android:layout_height="wrap_content"
-        android:background="@color/login_bk_color"
-        tools:ignore="MissingConstraints">
+        android:background="@color/login_bk_color">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             style="@style/AppTheme.PopupOverlay"
@@ -25,30 +24,80 @@
                 android:textSize="20sp" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="60dp"
-            android:layout_height="match_parent">
-
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="60dp"
+                app:cardCornerRadius="10dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="80dp"
+                    android:drawableTop="@drawable/ic_treat"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:textAllCaps="false"
+                    android:textStyle="normal"
+                    android:text="Treat"
+                    android:textColor="#000000">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginTop="60dp"
-                app:cardCornerRadius="8dp">
+                app:cardCornerRadius="10dp">
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="HEAL YOUR TOMATO"
-                    android:textColor="#000"
-                    android:textSize="15sp"
-                    android:layout_margin="10dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="150dp"
+                    android:layout_height="80dp"
+                    android:drawableTop="@drawable/ic_treat"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:gravity="center">
+                    android:textAllCaps="false"
+                    android:textStyle="normal"
+                    android:text="Treat"
+                    android:textColor="#000000">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="60dp"
+            app:cardCornerRadius="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HEAL YOUR TOMATO"
+                android:textColor="#000"
+                android:textSize="15sp"
+                android:layout_margin="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
@@ -56,56 +105,151 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_margin="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
                         android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="130dp"
-                        android:src="@drawable/trial"/>
-                    <TextView
-                        android:layout_width="80dp"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:text="Hover camera "/>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="130dp"
+                            android:src="@drawable/trial"/>
+                        <TextView
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:text="Hover camera "/>
 
-                </LinearLayout>
+                    </LinearLayout>
                     <ImageView
-                        android:layout_width="50dp"
+                        android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_foward"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="130dp"
+                            android:src="@drawable/confirm"/>
+                        <TextView
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:text="Wait Progressbar stop "/>
+
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_foward"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="130dp"
+                            android:src="@drawable/treat"/>
+                        <TextView
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:text="Treat "/>
+
+                    </LinearLayout>
 
 
-        </LinearLayout>
+                </LinearLayout>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:drawableLeft="@drawable/ic_camera"
+                    android:drawableLeft="@drawable/camera"
                     android:background="@drawable/scan_button"
                     android:text="Scan Now"
                     android:layout_margin="20dp"
                     android:textColor="#fff"
                     android:layout_marginBottom="0dp"/>
-                </LinearLayout>
+            </LinearLayout>
 
-     </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_camera"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Scan"
+                android:textColor="#000000">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:id="@+id/txtCommunity"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_community"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:orientation="vertical"
+                android:text="Community"
+                android:textStyle="normal"
+                android:textColor="#000000">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_treat"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textAllCaps="false"
+                android:textStyle="normal"
+                android:text="Treat"
+                android:textColor="#000000">
+
+            </TextView>
 
 
 
         </LinearLayout>
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/color_primary">
 
-        </com.google.android.material.bottomappbar.BottomAppBar>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

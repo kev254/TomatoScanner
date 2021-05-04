@@ -26,14 +26,16 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-public class DashbordActivity extends AppCompatActivity {
-
+public class DashbordActivity extends AppCompatActivity implements  View.OnClickListener {
+    TextView community;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashbord);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        community = findViewById(R.id.txtCommunity);
+        community.setOnClickListener(this);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
@@ -42,10 +44,9 @@ public class DashbordActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
 
 
@@ -57,12 +58,12 @@ public class DashbordActivity extends AppCompatActivity {
 //            Intent i = new Intent(DashbordActivity.this, ClassifierActivity.class);
 //            startActivity(i);
 //        }
-        if (item.getItemId()==R.id.scan){
+        if (item.getItemId() == R.id.scan) {
             Intent i = new Intent(DashbordActivity.this, MenuActivity.class);
             startActivity(i);
         }
-        if (item.getItemId()==R.id.btn_logout){
-            final AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        if (item.getItemId() == R.id.btn_logout) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.tfe_ic_app_name);
             builder.setCancelable(true);
             builder.setMessage("Do you really want to logout?");
@@ -84,20 +85,20 @@ public class DashbordActivity extends AppCompatActivity {
             builder.show();
 
         }
-        if (item.getItemId()==R.id.vet){
+        if (item.getItemId() == R.id.vet) {
             Dexter.withActivity(DashbordActivity.this)
                     .withPermission(Manifest.permission.CALL_PHONE)
                     .withListener(new PermissionListener() {
                         @Override
                         public void onPermissionGranted(PermissionGrantedResponse response) {
-                            Intent intent=new Intent(Intent.ACTION_DIAL);
+                            Intent intent = new Intent(Intent.ACTION_DIAL);
                             intent.setData(Uri.parse("tel:0792097883"));
                             startActivity(intent);
                         }
 
                         @Override
                         public void onPermissionDenied(PermissionDeniedResponse response) {
-                            Toast.makeText(getApplicationContext(),"Permission Denied",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_LONG).show();
 
                         }
 
@@ -110,20 +111,20 @@ public class DashbordActivity extends AppCompatActivity {
 
         }
 
-        if (item.getItemId()==R.id.agrovet){
+        if (item.getItemId() == R.id.agrovet) {
             Dexter.withActivity(DashbordActivity.this)
                     .withPermission(Manifest.permission.CALL_PHONE)
                     .withListener(new PermissionListener() {
                         @Override
                         public void onPermissionGranted(PermissionGrantedResponse response) {
-                            Intent intent=new Intent(Intent.ACTION_DIAL);
+                            Intent intent = new Intent(Intent.ACTION_DIAL);
                             intent.setData(Uri.parse("tel:0792097883"));
                             startActivity(intent);
                         }
 
                         @Override
                         public void onPermissionDenied(PermissionDeniedResponse response) {
-                            Toast.makeText(getApplicationContext(),"Permission Denied",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_LONG).show();
 
                         }
 
@@ -140,4 +141,12 @@ public class DashbordActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == community) {
+            finish();
+            startActivity(new Intent(this, MenuActivity.class));
+        }
+
+    }
 }
