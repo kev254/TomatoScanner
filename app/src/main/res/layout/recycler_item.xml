@@ -25,16 +25,59 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="190dp"
         android:maxWidth="400dp"
-        android:textSize="20sp"
+        android:textColor="#000"
         android:layout_marginLeft="10dp"
-        android:text="@string/common_open_on_phone"
-        android:textColor="#161718"/>
+        android:text="@string/common_open_on_phone" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_thumb_up"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            android:text="Upvote">
+
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_downvote"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+            android:text="Downvote">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_community"
+            android:orientation="vertical"
+            android:textAllCaps="false"
+            android:layout_marginLeft="70dp"
+            android:textStyle="normal"
+            android:text="comment">
+
+        </TextView>
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>
+
 
     <Button
         android:id="@+id/view_details"

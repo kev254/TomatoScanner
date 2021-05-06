@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,9 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 public class DashbordActivity extends AppCompatActivity implements  View.OnClickListener {
-    TextView community;
+    TextView community,usermail,scan, me;
+    FirebaseAuth firebaseAuth;
+    Button btScan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,21 @@ public class DashbordActivity extends AppCompatActivity implements  View.OnClick
         setContentView(R.layout.activity_dashbord);
         Toolbar toolbar = findViewById(R.id.toolbar);
         community = findViewById(R.id.txtCommunity);
+        scan=findViewById(R.id.scan);
+        btScan=findViewById(R.id.btnscan);
+        me=findViewById(R.id.me);
         community.setOnClickListener(this);
+        scan.setOnClickListener(this);
+        btScan.setOnClickListener(this);
+        me.setOnClickListener(this);
+
         setSupportActionBar(toolbar);
+        usermail=findViewById(R.id.login_title);
+        firebaseAuth=FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() !=null){
+
+        }
+        usermail.setText("Hi, "+firebaseAuth.getCurrentUser().getEmail());
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("");
@@ -54,14 +70,16 @@ public class DashbordActivity extends AppCompatActivity implements  View.OnClick
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        if (item.getItemId()==R.id.scan){
-//            Intent i = new Intent(DashbordActivity.this, ClassifierActivity.class);
-//            startActivity(i);
-//        }
-        if (item.getItemId() == R.id.scan) {
-            Intent i = new Intent(DashbordActivity.this, MenuActivity.class);
+        if (item.getItemId()==R.id.scan){
+            Intent i = new Intent(DashbordActivity.this, ClassifierActivity.class);
             startActivity(i);
         }
+        if(item.getItemId()==R.id.quickstart){
+            Intent i= new Intent(DashbordActivity.this,IntroActivity.class);
+            finish();
+            startActivity(i);
+        }
+
         if (item.getItemId() == R.id.btn_logout) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.tfe_ic_app_name);
@@ -146,6 +164,17 @@ public class DashbordActivity extends AppCompatActivity implements  View.OnClick
         if (v == community) {
             finish();
             startActivity(new Intent(this, MenuActivity.class));
+        }
+        if(v==scan){
+            finish();
+            startActivity(new Intent(this,ClassifierActivity.class));
+        }
+        if(v==me){
+
+        }
+        if(v==btScan){
+            finish();
+            startActivity(new Intent(this,ClassifierActivity.class));
         }
 
     }

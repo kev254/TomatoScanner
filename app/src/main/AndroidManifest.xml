@@ -26,8 +26,10 @@
         <activity android:name=".AdminActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".PhoneActivity" />
+        <activity android:name=".IntroActivity"/>
+        <activity android:name=".LoginActivity"/>
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashActivity"
             android:label="@string/tfe_ic_app_name"
             android:screenOrientation="portrait">
             <intent-filter>

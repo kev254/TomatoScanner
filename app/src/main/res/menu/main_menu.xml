@@ -10,6 +10,10 @@
 
 
     <item
+        android:id="@+id/scan"
+        android:title="Scan Tomato"
+        android:orderInCategory="100"/>
+    <item
         android:id="@+id/vet"
         android:title="Contact Vet"
         android:orderInCategory="100"/>
@@ -19,21 +23,14 @@
         android:orderInCategory="100"/>
 
     <item
-        android:id="@+id/scan"
-        android:title="Scan Tomato"
-        android:orderInCategory="100"/>
-     <item
-         android:id="@+id/acount"
-         android:title="My Account"
-         android:orderInCategory="100"/>
-    <item
         android:id="@+id/post"
-        android:title="Ask Community"
+        android:title="Rate Tomatix"
         android:orderInCategory="100"/>
      <item
-         android:id="@+id/community"
-         android:title="COmmunity"
+         android:id="@+id/quickstart"
+         android:title="Quickstart"
          android:orderInCategory="100"/>
+
        <item
            android:id="@+id/btn_logout"
            android:title="Logout"

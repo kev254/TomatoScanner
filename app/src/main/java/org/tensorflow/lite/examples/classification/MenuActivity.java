@@ -40,15 +40,14 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
     TextView usermail;
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
     RecyclerView recyclerView;
     PostAdapter adapter;
-    ImageView hotels,parks,cars;
     static List<PostModel> list;
-    FloatingActionButton ExtendButton,VisitButton,ContactButton,EmailButton;
+    FloatingActionButton ExtendButton,VisitButton,ContactButton,EmailButton, ask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +67,8 @@ public class MenuActivity extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(MenuActivity.this));
+        ask=findViewById(R.id.ask);
+        ask.setOnClickListener(this);
 
 //initialize the list;
 
@@ -155,12 +156,12 @@ public class MenuActivity extends AppCompatActivity {
 
 
         firebaseAuth=FirebaseAuth.getInstance();
+        usermail=findViewById(R.id.UserEmail);
+        usermail.setText("Hi, "+firebaseAuth.getCurrentUser().getEmail());
         if(firebaseAuth.getCurrentUser()==null){
-            finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
-        usermail=findViewById(R.id.UserEmail);
-        usermail.setText("Dashboard");
+
         progressDialog= new ProgressDialog(this);
     }
 
@@ -168,21 +169,18 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.details_activity);
         AppCompatTextView Details,Title;
         ImageView imageView;
-        ExtendButton=findViewById(R.id.extend);
-        VisitButton=findViewById(R.id.fab3);
-        ContactButton=findViewById(R.id.fab1);
-        EmailButton=findViewById(R.id.fab2);
 
-        final FloatingActionButton[] fabs=new FloatingActionButton[]{VisitButton,ContactButton,EmailButton};
+
+        /***final FloatingActionButton[] fabs=new FloatingActionButton[]{VisitButton,ContactButton,EmailButton};
 
         ExtendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 for(FloatingActionButton f:fabs){
                     if (f.getVisibility()==View.GONE){
-                        f.setVisibility(View.VISIBLE);
+
                     }else {
-                        f.setVisibility(View.GONE);
+
                     }
                 }
             }
@@ -232,7 +230,7 @@ public class MenuActivity extends AppCompatActivity {
                 }
             });
 
-        }
+        }*****/
 
         Details=findViewById(R.id.description);
         Title=findViewById(R.id.name);
@@ -302,4 +300,11 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if(v==ask){
+            Intent i= new Intent(MenuActivity.this, AdminActivity.class);
+            startActivity(i);
+        }
+    }
 }

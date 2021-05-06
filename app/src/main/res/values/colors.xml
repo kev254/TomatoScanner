@@ -20,4 +20,6 @@
     <color name="disabledBtnBg">#999999</color>
     <color name="lightWhite">#D0D6CDCD</color>
     <color name="tfe_semi_transparent">#66000000</color>
+    <color name="dot_active">#FFEB3B</color>
+    <color name="dot_inactive">#673AB7</color>
 </resources>
