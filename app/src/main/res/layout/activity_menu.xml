@@ -54,7 +54,6 @@ android:layout_height="match_parent">
     android:src="@drawable/ic_pen"
     app:backgroundTint="@color/color_primary"
     app:fabSize="normal"
-    android:tooltipText="@string/disease_name"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent" />
 

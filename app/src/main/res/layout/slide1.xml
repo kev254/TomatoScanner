@@ -12,8 +12,14 @@
         android:orientation="vertical">
         <ImageView
             android:layout_width="match_parent"
-            android:src="@drawable/treat"
-            android:layout_height="match_parent"/>
+            android:src="@drawable/confirm"
+            android:layout_height="400dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hover Camera on your tomato"
+            android:textColor="@color/color_primary"
+            android:textAlignment="center"/>
 
 
 

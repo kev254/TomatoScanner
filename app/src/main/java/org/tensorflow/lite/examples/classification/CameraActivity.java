@@ -47,6 +47,8 @@ import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public abstract class CameraActivity extends AppCompatActivity
     implements OnImageAvailableListener,
         Camera.PreviewCallback,
@@ -86,7 +88,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private ImageView plusImageView, minusImageView;
   private Spinner modelSpinner;
   private Spinner deviceSpinner;
-  private TextView threadsTextView, diseaseName, diseaseDescription, scanneddisease;
+  private TextView threadsTextView, diseaseName, diseaseDescription, scanneddisease,diseasecause,diseaseprev,diseasetreat;
 
   private Model model = Model.FLOAT_EFFICIENTNET;
   private Device device = Device.CPU;
@@ -191,8 +193,7 @@ public abstract class CameraActivity extends AppCompatActivity
     Disesase_details.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent i = new Intent(CameraActivity.this,DiseaseActivity.class);
-        startActivity(i);
+
       }
     });
 
@@ -343,7 +344,11 @@ public abstract class CameraActivity extends AppCompatActivity
     fusarium = MediaPlayer.create(this, R.raw.fusarium);
     anthracnose = MediaPlayer.create(this, R.raw.anthracnose);
     diseaseName=findViewById(R.id.disease_name);
-    diseaseDescription=findViewById(R.id.disease_desc);
+    diseaseDescription=findViewById(R.id.ddesc);
+    diseasecause=findViewById(R.id.dcause);
+    diseaseprev=findViewById(R.id.dprevention);
+    diseasetreat=findViewById(R.id.dtreamrnt);
+
   }
 
   @Override
@@ -530,10 +535,9 @@ public abstract class CameraActivity extends AppCompatActivity
         return 0;
     }
   }
-  boolean Anthracnose = false;
   boolean Blossom  = false;
-  boolean Fusarium  = false;
-  boolean Blight = false;
+  boolean Healthy=false;
+  boolean Blur=false;
 
   @UiThread
   protected void showResultsInBottomSheet(List<Recognition> results) {
@@ -546,37 +550,26 @@ public abstract class CameraActivity extends AppCompatActivity
               String.format("%.2f", (100 * recognition.getConfidence())) + "%");
           float confi = 100 * recognition.getConfidence();
           try {
-              if (!Anthracnose && recognitionTextView.getText().toString().equalsIgnoreCase("0 Anthracnose") && confi>90 ) {
+              if (!Blossom && recognitionTextView.getText().toString().equalsIgnoreCase("0 Blosom End Rot") && confi>75 ) {
                   anthracnose.start();
-                  Anthracnose =true;
+                  Blossom=true;
                   progressbar.setVisibility(View.GONE);
-                  scanneddisease.setText("ATNTRACNOSE");
-                  Blight = false;
-                  Blossom = false;
-                  diseaseName.setText(R.string.tfe_ic_app_name);
-                  diseaseDescription.setText(R.string.tfe_ic_app_name);
-              } else if (!Blight && recognitionTextView.getText().toString().equalsIgnoreCase("2 Early Blight")&& confi>90) {
-                  blight.start();
-                  progressbar.setVisibility(View.GONE);
-                  scanneddisease.setText("EARLY BLIGHT");
-                  Blight = true;
-                  Blossom =false;
-                  Anthracnose = false;
-              } else if (!Blossom &&recognitionTextView.getText().toString().equalsIgnoreCase("1 Blossom end rot")&& confi>90 ) {
-                  blosom.start();
-                  progressbar.setVisibility(View.GONE);
-                 scanneddisease.setText("BLOSOM END ROT");
-                  Blossom  =true;
-                  Blight =false;
-                  Anthracnose = false;
+                  scanneddisease.setText("BLOSOM END ROT");
+                  diseasecause.setText(R.string.blosmo_cause);
+                  diseaseDescription.setText(R.string.blosom_desc);
+                  diseaseprev.setText(R.string.blosom_prev);
+                  diseasetreat.setText(R.string.blosom_treatment);
+                  Healthy=false;
+                  Blur=false;
+
               }
-              else if (!Fusarium &&recognitionTextView.getText().toString().equalsIgnoreCase("3 Fusarium wilt")&& confi>90 ) {
-                fusarium.start();
+              else if (!Healthy &&recognitionTextView.getText().toString().equalsIgnoreCase("1 Healthy")&& confi>90 ) {
                 progressbar.setVisibility(View.GONE);
-                scanneddisease.setText("FUSARIUM WILT");
-                Blossom  =true;
-                Blight =false;
-                Anthracnose = false;
+                scanneddisease.setText("Healthy");
+                Healthy=true;
+                Blur=false;
+                Blossom  =false;
+
               }
           }catch (Exception e){
               e.printStackTrace();
@@ -701,6 +694,5 @@ public abstract class CameraActivity extends AppCompatActivity
 
   @Override
   public void onNothingSelected(AdapterView<?> parent) {
-    // Do nothing.
   }
 }

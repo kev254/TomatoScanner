@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     TextView signUpLink, error;
     EditText Email,Password;
@@ -47,14 +49,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private   void UserLogin(){
         String email=Email.getText().toString().trim();
         final String password=Password.getText().toString().trim();
-        if(TextUtils.isEmpty(password)){
-            error.setText("Password can't be empty!!");
+        if(TextUtils.isEmpty(password) || TextUtils.isEmpty(email)){
+            SweetAlertDialog sd= new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+            sd.setTitle("Wrong Feed.");
+            sd.setContentText("Empty Fields ");
+            sd.show();
             return;
         }
-        if(TextUtils.isEmpty(email)){
-            error.setText("Email can't be empty !!");
-            return;
-        }
+
         progressDialog.setMessage("Please wait....");
         progressDialog.show();
         firebaseAuth.signInWithEmailAndPassword(email,password)
@@ -68,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         }
                         else {
-                            error.setText("Ooops! Your credentials didn't match.");
+                            error.setText("Invalid Details try again");
                         }
 
                     }

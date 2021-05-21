@@ -7,7 +7,7 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PhoneActivity extends AppCompatActivity {
+public class InformationActivity extends AppCompatActivity {
     ProgressBar progress_bar;
     Button generate_btn,verify_otp;
     EditText country_code_text,phone_number_text,phone_code;

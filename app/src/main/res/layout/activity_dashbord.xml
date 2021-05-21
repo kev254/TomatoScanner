@@ -25,21 +25,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="5dp"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginBottom="25dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:orientation="horizontal">
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
-                android:layout_marginTop="60dp"
-                app:cardCornerRadius="10dp">
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="5dp">
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="80dp"
@@ -48,7 +47,8 @@
                     android:orientation="vertical"
                     android:textAllCaps="false"
                     android:textStyle="normal"
-                    android:text="Treat"
+                    android:text="Farming Guide"
+                    android:id="@+id/guide"
                     android:textColor="#000000">
 
                 </TextView>
@@ -58,18 +58,18 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="60dp"
-                app:cardCornerRadius="10dp">
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="5dp">
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="80dp"
-                    android:drawableTop="@drawable/ic_treat"
+                    android:drawableTop="@drawable/ic_community"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:textAllCaps="false"
                     android:textStyle="normal"
-                    android:text="Treat"
+                    android:text="Fertilizer calculator"
+                    android:id="@+id/calc"
                     android:textColor="#000000">
 
                 </TextView>

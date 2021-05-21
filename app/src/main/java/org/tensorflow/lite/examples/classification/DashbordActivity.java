@@ -28,7 +28,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 public class DashbordActivity extends AppCompatActivity implements  View.OnClickListener {
-    TextView community,usermail,scan, me;
+    TextView community,usermail,scan, me, farmguide,calculator;
     FirebaseAuth firebaseAuth;
     Button btScan;
 
@@ -39,8 +39,12 @@ public class DashbordActivity extends AppCompatActivity implements  View.OnClick
         Toolbar toolbar = findViewById(R.id.toolbar);
         community = findViewById(R.id.txtCommunity);
         scan=findViewById(R.id.scan);
+        calculator=findViewById(R.id.calc);
+        farmguide=findViewById(R.id.guide);
         btScan=findViewById(R.id.btnscan);
         me=findViewById(R.id.me);
+        calculator.setOnClickListener(this);
+        farmguide.setOnClickListener(this);
         community.setOnClickListener(this);
         scan.setOnClickListener(this);
         btScan.setOnClickListener(this);
@@ -162,20 +166,28 @@ public class DashbordActivity extends AppCompatActivity implements  View.OnClick
     @Override
     public void onClick(View v) {
         if (v == community) {
-            finish();
+
             startActivity(new Intent(this, MenuActivity.class));
         }
         if(v==scan){
-            finish();
+
             startActivity(new Intent(this,ClassifierActivity.class));
         }
         if(v==me){
 
         }
         if(v==btScan){
-            finish();
             startActivity(new Intent(this,ClassifierActivity.class));
         }
+        if(v==farmguide){
+
+            startActivity(new Intent(this,InformationActivity.class));
+        }
+        if(v==calculator){
+
+            startActivity(new Intent(this,Calculator.class));
+        }
+
 
     }
 }

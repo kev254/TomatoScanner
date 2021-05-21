@@ -13,8 +13,14 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
             android:src="@drawable/trial"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait Untill the Progress bar stops"
+            android:textColor="@color/color_primary"
+            android:textAlignment="center"/>
 
 
 

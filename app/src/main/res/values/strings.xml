@@ -13,11 +13,31 @@
         <item>Float_MobileNet</item>
     </string-array>
 
-    <string name="disease_name" >Blosom End Rot</string>
+    <string name="blosom">Blosom End Rot</string>
     <string name="tfe_ic_device" translatable="false">Device:</string>
-    <string name="disases_cause" >The main cause of blossom end rot is improper watering it can be from changes in natural rainfall or irrigation making the soil too wet or to dry.This causes the plant to not be able to absorb enough calcium for good fruit development. However, it’s also possible to have blossom end rot problems from cold soil, high salt levels, root damage, excess nitrogen, or the wrong soil pH.</string>
-    <string name="disases_desc" >When you start seeing black spots starting to form on the end of your tomatoes, your first thought might be that you have a disease problem. But blossom end rot is a physiological problem, not a disease. It’s caused by a calcium imbalance happening inside of your tomato plant but it’s easy to prevent, control, and cure with the right care. You can recognize this problem easily as it starts to form on tomatoes either green or ripe. At first, it looks like a soft, watery spot on the end of the tomato. Eventually, it turns into a brown, scab-like patch with a leathery texture</string>
-    <string name="disase_prev" >It’s very important to water your tomato plants regularly to maintain a consistent level of moisture in the soil over your growing season. When the hot summer weather arrives, water your tomatoes 1 to 2 times a week as needed. Make sure to water them deeply so the soil is moist down to about 6 inches (15.24 cm). Deeper watering encourages the roots to grow deep into the ground where the moisture level is more consistent. Take care not to overwater though. Plants should not be sitting in soggy soil as this can also stress them and stop the proper uptake of calcium </string>
+    <string name="blosmo_cause">The conditions that cause blossom-end rot are closely linked to inconsistent soil moisture throughout the growing season. Since calcium is only moved into the plant with an ample moisture supply, when drought occurs the fruit continues to develop but will be affected by a calcium deficiency.</string>
+    <string name="blosom_desc">Blossom-end rot first appears as water- soaked spots on the blossom end, or bottom, of the tomato. The affected tissue breaks down rapidly and the area becomes sunken, dark brown or black, and leathery. This can happen at any time as the tomatoes mature, and most often on the first tomatoes of the season.</string>
+    <string name="blosom_prev">Grow tomatoes in well-drained soil high in organic matter with a soil pH between 6.5 and 7.5.</string>
+    <string name="blosom_treatment"> Infected fruit should be removed when first noticed. This rot does not spread from plant to plant or from fruit to fruit, so even if it occurs on your earliest tomatoes, it may not affect later tomatoes on the same plant. Fungicides and insecticides are useless as control measures for this disorder.</string>
+    <string name="anthracnose">Anthracnose</string>
+    <string name="anthracnose_cause">Masses of pink to orange colored spores are released from these structures when weather is wet or humid. These spores are dispersed to other fruit by splashing water. Eventually the entire fruit will rot, especially when there are several anthracnose spots or decay organisms enter the diseased tissue. Fruit nearest to the ground are most likely to be affected. The fungus can also infect roots.</string>
+    <string name="anthracnose_desc">Spots on fruit initially are small, circular, and depressed. They can enlarge considerably over time, and may develop concentric rings. The center of anthracnose spots become dark as the fungus produces spore-containing structures</string>
+    <string name="anthracnose_prev">important practices for managing anthracnose is rotating where tomatoes are grown.</string>
+    <string name="anthracnose_treatment"> Manage anthracnose by controlling sources of the pathogen, minimizing the opportunity for dispersal of the pathogen, reducing favorability of environmental conditions for disease development, and applying fungicides. There are no resistant varieties.</string>
+    <string name="earlyblight">Eraly Blight</string>
+    <string name="earlyblight_cause">Early blight can be caused by two different closely related fungi, Alternaria tomatophila and Alternaria solani.</string>
+    <string name="earlyblight_desc">small dark spots form on older foliage near the ground.</string>
+    <string name="earlyblight_prev">Fertilize properly to maintain vigorous plant growth. Particularly, do not over-fertilize with potassium and maintain adequate levels of both nitrogen and phosphorus</string>
+    <string name="earlyblight_treatment"> It is important to alternate between different chemical families to avoid the development of pathogen insensitivity to particular active ingredients. Some insensitivity to the chemical family 11 has become more common in some areas, so particular care should be taken to rotate these with other chemical families.</string>
+
+    <string name="fusarium">Fusarium wilt</string>
+    <string name="fusarium_cause">Caused by  Fusarium wilt pathogen from infected seeds, soil blow or even the soil.</string>
+    <string name="fusarium_desc">Wilting The plants will literally wilt. Often it starts with a single leaf or shoot, near the top of the plant. It will recover at night when temperatures are cooler, but as it progresses, the entire plant will wilt and not recover. Watering does not make a difference.</string>
+    <string name="fusarium_prev">Apply lime to the soil in your garden, to bring the pH up into the neutral range of about 6.5 - 7.0.</string>
+    <string name="fusarium_treatment"> This condition cannot be treatted but only managed.</string>
+    <string name="fruit">It is at this stage that they need plenty of food – phosphorus and especially potash (potassium) to be exact. It is also at this stage that if they don’t receive enough calcium, Blossom End Rot is waiting to strike! Because calcium is an immobile nutrient, and doesn’t travel around a plant’s system freely, it is often easier to spray the leaves with calcium, which helps get it to where it is needed more quickly, than to hope for the best through the roots!</string>
+    <string name="flower">It’s exciting to see flowers open because each one is a potential tomato! However, it is important to be aware of Blossom Drop – this happens when flowers fail to pollinate and the flower buds drop off the end of their stems.Stress can also cause plants to abort their flowers if they feel they cannot cope because of poor growing conditions or being over-watered or over-fed etc.</string>
+    <string name="leaf">The leaf stage is when plants are developing both their roots and top growth. Nitrogen is the most important nutrient at this stage along with all the other elements in smaller amounts.</string>
     <string-array name="tfe_ic_devices" translatable="false">
         <item>CPU</item>
         <item>GPU</item>

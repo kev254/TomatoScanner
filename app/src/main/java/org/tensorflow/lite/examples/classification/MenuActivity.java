@@ -3,15 +3,20 @@ package org.tensorflow.lite.examples.classification;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Message;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +26,8 @@ import com.bumptech.glide.Glide;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -41,12 +48,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView usermail;
+    TextView usermail,comment;
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
     RecyclerView recyclerView;
     PostAdapter adapter;
+    ImageButton btncommnet;
+    String phoneNo, message;
     static List<PostModel> list;
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     FloatingActionButton ExtendButton,VisitButton,ContactButton,EmailButton, ask;
 
     @Override
@@ -68,6 +78,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(MenuActivity.this));
         ask=findViewById(R.id.ask);
+        comment= findViewById(R.id.comment);
         ask.setOnClickListener(this);
 
 //initialize the list;
@@ -306,5 +317,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             Intent i= new Intent(MenuActivity.this, AdminActivity.class);
             startActivity(i);
         }
+
+
     }
+
 }

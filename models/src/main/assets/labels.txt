@@ -1,4 +1,3 @@
-0 Anthracnose
-1 Blossom end rot
-2 Early Blight
-3 Fusarium wilt
+0 Blosom End Rot
+1 Healthy
+2 Blur Imgae
